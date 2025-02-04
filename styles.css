@@ -1,0 +1,129 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1E90FF;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+}
+
+input, textarea {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1E90FF;
+}
+
+.registro {
+    margin-top: 40px;
+}
+
+.registro h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.registro ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.registro li {
+    background-color: #f9f9f9;
+    margin: 12px 0;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 5px solid #1E90FF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.registro li .servico-info {
+    font-size: 16px;
+    color: #444;
+}
+
+.registro li .servico-info span {
+    font-weight: bold;
+}
+
+.registro li .valor {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1E90FF;
+    margin-top: 10px;
+}
+
+.registro li .data {
+    font-size: 14px;
+    color: #777;
+}
+
+.registro li .local-cliente {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.registro li:hover {
+    background-color: #e9f7e9;
+    border-left-color: #1E90FF;
+}
