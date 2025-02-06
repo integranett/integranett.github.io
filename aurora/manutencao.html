@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção - Sistema de Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sidebar/Menu -->
+    <div class="sidebar">
+        <ul>
+            <li class="menu-item">
+                <a href="manutencao.html">Manutenção</a>
+            </li>
+            <li class="menu-item">
+                <a href="cadastro.html">Cadastro</a>
+            </li>
+            <li class="menu-item">
+                <a href="reservas.html">Reservas</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="content">
+        <h1>Cadastro de Equipamentos - Manutenção</h1>
+        <form action="#" method="POST">
+            <label for="nomeEquipamento">Nome do Equipamento:</label>
+            <input type="text" id="nomeEquipamento" name="nomeEquipamento" required><br><br>
+
+            <label for="tipoEquipamento">Tipo:</label>
+            <select id="tipoEquipamento" name="tipoEquipamento">
+                <option value="Notebook">Notebook</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Televisao">Televisão</option>
+                <option value="Sala">Sala</option>
+            </select><br><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+</body>
+</html>
+

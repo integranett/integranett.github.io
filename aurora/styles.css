@@ -1,0 +1,144 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-bottom: 60px; /* Espaço para o rodapé fixo */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #1E90FF;
+    color: white;
+    padding-top: 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    padding: 10px 20px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #1E90FF;
+}
+
+.submenu {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.submenu li {
+    padding: 10px 20px;
+}
+
+.submenu a {
+    color: #ffffff;
+}
+
+.submenu a:hover {
+    background-color: #1E90FF;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    font-size: 30px;
+    color: #1E90FF;
+    cursor: pointer;
+    margin: 20px;
+}
+
+/* Conteúdo */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Formulários */
+.formulario {
+    margin-bottom: 20px;
+}
+
+.formulario h2 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.formulario label {
+    margin-right: 10px;
+}
+
+.formulario input, .formulario select {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario button {
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #4682B4;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #1E90FF;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Estilo para o conteúdo da página */
+h1 {
+    color: #1E90FF;
+}
+
+h2 {
+    color: #1E90FF;
+}
+
+/* Ajustes de exibição para os formulários */
+.formulario {
+    display: none;
+}

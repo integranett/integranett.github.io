@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="menu-toggle" onclick="toggleSidebar()">&#9776;</div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy;Aurora Coelho. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Sidebar/Menu -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#" onclick="toggleSubmenu('manutencaoSubmenu')">Manutenção</a>
+                <ul id="manutencaoSubmenu" class="submenu">
+                    <li><a href="#" onclick="mostrarFormulario('manutencaoAdicionar')">Adicionar Equipamentos</a></li>
+                    <li><a href="#" onclick="mostrarFormulario('manutencaoReparar')">Reparar Equipamentos</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleSubmenu('cadastroSubmenu')">Cadastros</a>
+                <ul id="cadastroSubmenu" class="submenu">
+                    <li><a href="#" onclick="mostrarFormulario('cadastroProfessor')">Cadastrar Professores</a></li>
+                    <li><a href="#" onclick="mostrarFormulario('cadastroEquipamento')">Cadastrar Equipamentos</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="toggleSubmenu('reservasSubmenu')">Reservas</a>
+                <ul id="reservasSubmenu" class="submenu">
+                    <li><a href="#" onclick="mostrarFormulario('reservaSala')">Reservar Salas</a></li>
+                    <li><a href="#" onclick="mostrarFormulario('reservaEquipamento')">Reservar Equipamentos</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="mostrarFormulario('reservasSalvas')">Reservas Feitas</a></li>
+        </ul>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="content" id="content">
+        <h1>Sistema de Registro Aurora Coelho</h1>
+
+        <!-- Formulários -->
+        <div id="manutencaoAdicionar" class="formulario" style="display:none;">
+            <h2>Adicionar Equipamentos</h2>
+            <form id="formManutencaoAdicionar">
+                <label for="equipamentoNome">Nome do Equipamento:</label>
+                <input type="text" id="equipamentoNome" name="equipamentoNome" required><br><br>
+                <label for="responsavelAdicionar">Nome do Responsável:</label>
+                <input type="text" id="responsavelAdicionar" name="responsavelAdicionar" required><br><br>
+                <button type="submit">Adicionar</button>
+            </form>
+            <div id="resultadoManutencaoAdicionar"></div>
+        </div>
+
+        <div id="manutencaoReparar" class="formulario" style="display:none;">
+            <h2>Reparar Equipamentos</h2>
+            <form id="formManutencaoReparar">
+                <label for="equipamentoReparar">Nome do Equipamento:</label>
+                <input type="text" id="equipamentoReparar" name="equipamentoReparar" required><br><br>
+                <label for="responsavelReparar">Nome do Responsável:</label>
+                <input type="text" id="responsavelReparar" name="responsavelReparar" required><br><br>
+                <button type="submit">Registrar Reparação</button>
+            </form>
+            <div id="resultadoManutencaoReparar"></div>
+        </div>
+
+        <!-- Outros Formulários -->
+        <div id="cadastroProfessor" class="formulario" style="display:none;">
+            <h2>Cadastrar Professores</h2>
+            <form id="formProfessor">
+                <label for="nomeProfessor">Nome:</label>
+                <input type="text" id="nomeProfessor" name="nomeProfessor" required><br><br>
+                <label for="disciplina">Disciplina:</label>
+                <input type="text" id="disciplina" name="disciplina" required><br><br>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <div id="resultadoCadastroProfessor"></div>
+        </div>
+
+        <div id="cadastroEquipamento" class="formulario" style="display:none;">
+            <h2>Cadastrar Equipamentos</h2>
+            <form id="formEquipamento">
+                <label for="nomeEquipamento">Nome do Equipamento:</label>
+                <input type="text" id="nomeEquipamento" name="nomeEquipamento" required><br><br>
+                <label for="tipoEquipamento">Tipo:</label>
+                <select id="tipoEquipamento" name="tipoEquipamento">
+                    <option value="Notebook">Notebook</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Televisao">Televisão</option>
+                    <option value="Sala">Sala</option>
+                </select><br><br>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <div id="resultadoCadastroEquipamento"></div>
+        </div>
+
+        <div id="reservaSala" class="formulario" style="display:none;">
+            <h2>Reservar Sala</h2>
+            <form id="formReservaSala">
+                <label for="nomeSala">Nome da Sala:</label>
+                <input type="text" id="nomeSala" name="nomeSala" required><br><br>
+                <label for="dataReservaSala">Data da Reserva:</label>
+                <input type="date" id="dataReservaSala" name="dataReservaSala" required><br><br>
+                <label for="responsavelReparar">Nome do Responsável:</label>
+                <input type="text" id="responsavelReparar" name="responsavelReparar" required><br><br>
+                <button type="submit">Reservar</button>
+            </form>
+            <div id="resultadoReservaSala"></div>
+        </div>
+
+        <div id="reservaEquipamento" class="formulario" style="display:none;">
+            <h2>Reservar Equipamento</h2>
+            <form id="formReservaEquipamento">
+                <label for="nomeEquipamento">Nome do Equipamento:</label>
+                <input type="text" id="nomeEquipamento" name="nomeEquipamento" required><br><br>
+                <label for="nomeEquipamentoReserva">Equipamento:</label>
+                <select id="nomeEquipamentoReserva" name="nomeEquipamentoReserva">
+                    <option value="Notebook">Notebook</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Televisao">Televisão</option>
+                </select><br><br>
+                <label for="responsavelReparar">Nome do Responsável:</label>
+                <input type="text" id="responsavelReparar" name="responsavelReparar" required><br><br>
+                <label for="dataReservaEquipamento">Data do Emprestimo :</label>
+                <input type="date" id="dataReservaEquipamento" name="dataReservaEquipamento" required><br><br>
+                <button type="submit">Reservar</button>
+            </form>
+            <div id="resultadoReservaEquipamento"></div>
+        </div>
+
+        <div id="reservasSalvas" class="formulario" style="display:none;">
+            <h2>Reservas Salvas</h2>
+            <div id="reservasSalvasContainer"></div>
+            <button onclick="zerarReservas()">Resetar Reservas</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para formatar a data
+        function formatarData(data) {
+            const opcoes = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dataFormatada = new Date(data).toLocaleDateString('pt-BR', opcoes);
+            return dataFormatada;
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('content');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px';
+                content.style.marginLeft = '0';
+            } else {
+                sidebar.style.left = '0';
+                content.style.marginLeft = '250px';
+            }
+        }
+
+        function toggleSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
+        }
+
+        function mostrarFormulario(formularioId) {
+            const formularios = document.getElementsByClassName('formulario');
+            for (let i = 0; i < formularios.length; i++) {
+                formularios[i].style.display = 'none';
+            }
+            document.getElementById(formularioId).style.display = 'block';
+        }
+
+        function salvarDados(key, data) {
+            const dadosSalvos = JSON.parse(localStorage.getItem(key)) || [];
+            data.devolvida = false;  // Inicializa a reserva como não devolvida
+            dadosSalvos.push(data);
+            localStorage.setItem(key, JSON.stringify(dadosSalvos));
+        }
+
+        function mostrarReservasSalvas() {
+            const reservasSalvasSala = JSON.parse(localStorage.getItem('reservasSala')) || [];
+            const reservasSalvasEquipamento = JSON.parse(localStorage.getItem('reservasEquipamento')) || [];
+
+            const container = document.getElementById('reservasSalvasContainer');
+            container.innerHTML = '';
+
+            if (reservasSalvasSala.length > 0) {
+                const salasDiv = document.createElement('div');
+                salasDiv.innerHTML = '<h3>Reservas de Salas:</h3>';
+                reservasSalvasSala.forEach((reserva, index) => {
+                    const dataFormatada = formatarData(reserva.data); // Formata a data
+                    salasDiv.innerHTML += `
+                        <p>Sala: ${reserva.sala} | Data: ${dataFormatada} | Status: ${reserva.devolvida ? 'Devolvida' : 'Não Devolvida'}</p>
+                        ${!reserva.devolvida ? `<button onclick="marcarComoDevolvida('reservasSala', ${index})">Marcar como Devolvida</button>` : ''}
+                        <hr>
+                    `;
+                });
+                container.appendChild(salasDiv);
+            }
+
+            if (reservasSalvasEquipamento.length > 0) {
+                const equipamentosDiv = document.createElement('div');
+                equipamentosDiv.innerHTML = '<h3>Reservas de Equipamentos:</h3>';
+                reservasSalvasEquipamento.forEach((reserva, index) => {
+                    const dataFormatada = formatarData(reserva.data); // Formata a data
+                    equipamentosDiv.innerHTML += `
+                        <p>Equipamento: ${reserva.equipamento} | Data: ${dataFormatada} | Status: ${reserva.devolvida ? 'Devolvida' : 'Não Devolvida'}</p>
+                        ${!reserva.devolvida ? `<button onclick="marcarComoDevolvida('reservasEquipamento', ${index})">Marcar como Devolvida</button>` : ''}
+                        <hr>
+                    `;
+                });
+                container.appendChild(equipamentosDiv);
+            }
+        }
+
+        // Função para marcar a reserva como devolvida
+        function marcarComoDevolvida(key, index) {
+            const reservas = JSON.parse(localStorage.getItem(key)) || [];
+            reservas[index].devolvida = true;  // Marca a reserva como devolvida
+            localStorage.setItem(key, JSON.stringify(reservas));
+            mostrarReservasSalvas();  // Atualiza a lista de reservas para refletir a mudança
+        }
+
+        // Função para zerar todas as reservas salvas
+        function zerarReservas() {
+            localStorage.removeItem('reservasSala');
+            localStorage.removeItem('reservasEquipamento');
+            mostrarReservasSalvas();  // Atualiza a lista de reservas após zerar
+        }
+
+        // Evento para os formulários de reserva
+        document.getElementById('formReservaSala').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const sala = document.getElementById('nomeSala').value;
+            const data = document.getElementById('dataReservaSala').value;
+            const reservaSala = { sala, data };
+            salvarDados('reservasSala', reservaSala);
+            document.getElementById('resultadoReservaSala').innerHTML = `
+                <h3>Reserva Confirmada:</h3>
+                <p>Sala: ${sala}</p>
+                <p>Data: ${data}</p>
+            `;
+        });
+
+        document.getElementById('formReservaEquipamento').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const equipamento = document.getElementById('nomeEquipamentoReserva').value;
+            const data = document.getElementById('dataReservaEquipamento').value;
+            const reservaEquipamento = { equipamento, data };
+            salvarDados('reservasEquipamento', reservaEquipamento);
+            document.getElementById('resultadoReservaEquipamento').innerHTML = `
+                <h3>Reserva Confirmada:</h3>
+                <p>Equipamento: ${equipamento}</p>
+                <p>Data: ${data}</p>
+            `;
+        });
+
+        // Chama a função para mostrar as reservas salvas quando a página for carregada
+        document.addEventListener('DOMContentLoaded', mostrarReservasSalvas);
+    </script>
+
+</body>
+</html>
+
+
+
+

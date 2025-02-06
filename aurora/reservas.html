@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Sistema de Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sidebar/Menu -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="manutencao.html">Manutenção</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="#">Reservas</a>
+                <ul class="submenu">
+                    <li><a href="#reservaSala">Reservar Sala</a></li>
+                    <li><a href="#reservaNotebook">Reservar Notebook</a></li>
+                    <li><a href="#reservaTablet">Reservar Tablet</a></li>
+                    <li><a href="#reservaTelevisao">Reservar Televisão</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="content">
+        <h1>Bem-vindo à Área de Reservas</h1>
+        <p>Escolha uma das opções abaixo para fazer uma reserva:</p>
+
+        <!-- Seções de Reservas -->
+        <section id="reservaSala">
+            <h2>Reserva de Sala</h2>
+            <form id="formReservaSala">
+                <label for="nomeSala">Nome da Sala:</label>
+                <input type="text" id="nomeSala" name="nomeSala" required><br><br>
+
+                <label for="dataReservaSala">Data da Reserva:</label>
+                <input type="date" id="dataReservaSala" name="dataReservaSala" required><br><br>
+
+                <button type="submit">Reservar Sala</button>
+            </form>
+            <div id="resultadoReservaSala"></div>
+        </section>
+
+        <section id="reservaNotebook">
+            <h2>Reserva de Notebook</h2>
+            <form id="formReservaNotebook">
+                <label for="modeloNotebook">Modelo do Notebook:</label>
+                <input type="text" id="modeloNotebook" name="modeloNotebook" required><br><br>
+
+                <label for="dataReservaNotebook">Data da Reserva:</label>
+                <input type="date" id="dataReservaNotebook" name="dataReservaNotebook" required><br><br>
+
+                <button type="submit">Reservar Notebook</button>
+            </form>
+            <div id="resultadoReservaNotebook"></div>
+        </section>
+
+        <section id="reservaTablet">
+            <h2>Reserva de Tablet</h2>
+            <form id="formReservaTablet">
+                <label for="modeloTablet">Modelo do Tablet:</label>
+                <input type="text" id="modeloTablet" name="modeloTablet" required><br><br>
+
+                <label for="dataReservaTablet">Data da Reserva:</label>
+                <input type="date" id="dataReservaTablet" name="dataReservaTablet" required><br><br>
+
+                <button type="submit">Reservar Tablet</button>
+            </form>
+            <div id="resultadoReservaTablet"></div>
+        </section>
+
+        <section id="reservaTelevisao">
+            <h2>Reserva de Televisão</h2>
+            <form id="formReservaTelevisao">
+                <label for="modeloTelevisao">Modelo da Televisão:</label>
+                <input type="text" id="modeloTelevisao" name="modeloTelevisao" required><br><br>
+
+                <label for="dataReservaTelevisao">Data da Reserva:</label>
+                <input type="date" id="dataReservaTelevisao" name="dataReservaTelevisao" required><br><br>
+
+                <button type="submit">Reservar Televisão</button>
+            </form>
+            <div id="resultadoReservaTelevisao"></div>
+        </section>
+    </div>
+
+    <script>
+        // Função para capturar e exibir os dados de reserva de sala
+        document.getElementById('formReservaSala').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nomeSala = document.getElementById('nomeSala').value;
+            const dataReservaSala = document.getElementById('dataReservaSala').value;
+
+            const resultadoReservaSala = document.getElementById('resultadoReservaSala');
+            resultadoReservaSala.innerHTML = `
+                <h3>Reserva de Sala Confirmada:</h3>
+                <p>Sala: ${nomeSala}</p>
+                <p>Data: ${dataReservaSala}</p>
+            `;
+        });
+
+        // Função para capturar e exibir os dados de reserva de notebook
+        document.getElementById('formReservaNotebook').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const modeloNotebook = document.getElementById('modeloNotebook').value;
+            const dataReservaNotebook = document.getElementById('dataReservaNotebook').value;
+
+            const resultadoReservaNotebook = document.getElementById('resultadoReservaNotebook');
+            resultadoReservaNotebook.innerHTML = `
+                <h3>Reserva de Notebook Confirmada:</h3>
+                <p>Modelo: ${modeloNotebook}</p>
+                <p>Data: ${dataReservaNotebook}</p>
+            `;
+        });
+
+        // Função para capturar e exibir os dados de reserva de tablet
+        document.getElementById('formReservaTablet').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const modeloTablet = document.getElementById('modeloTablet').value;
+            const dataReservaTablet = document.getElementById('dataReservaTablet').value;
+
+            const resultadoReservaTablet = document.getElementById('resultadoReservaTablet');
+            resultadoReservaTablet.innerHTML = `
+                <h3>Reserva de Tablet Confirmada:</h3>
+                <p>Modelo: ${modeloTablet}</p>
+                <p>Data: ${dataReservaTablet}</p>
+            `;
+        });
+
+        // Função para capturar e exibir os dados de reserva de televisão
+        document.getElementById('formReservaTelevisao').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const modeloTelevisao = document.getElementById('modeloTelevisao').value;
+            const dataReservaTelevisao = document.getElementById('dataReservaTelevisao').value;
+
+            const resultadoReservaTelevisao = document.getElementById('resultadoReservaTelevisao');
+            resultadoReservaTelevisao.innerHTML = `
+                <h3>Reserva de Televisão Confirmada:</h3>
+                <p>Modelo: ${modeloTelevisao}</p>
+                <p>Data: ${dataReservaTelevisao}</p>
+            `;
+        });
+    </script>
+
+</body>
+</html>
+
